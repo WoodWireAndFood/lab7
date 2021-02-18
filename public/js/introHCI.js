@@ -9,5 +9,11 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	// your code here
+    $('[class^=like]').click(sendGAInfo); //click handler
+	// $('.like').click(sendGAInfo); //click handler
+}
+
+function sendGAInfo(e) {
+    console.log("Hit like");
+    ga("send", "event", 'like', 'click');
 }
